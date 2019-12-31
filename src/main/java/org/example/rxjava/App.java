@@ -11,15 +11,16 @@ public class App {
 
     public static void main (String args[]){
 
-        System.out.println("asd");
+        System.out.println("Start of Program");
         List<String> someWords = new ArrayList<String>();
         someWords.add("Word1");
         someWords.add("Word2");
 
 
+
         Observable.fromIterable(someWords)
-                .groupBy(word -> word.equals(word))
-                .subscribe(grouplist ->
-                        System.out.println(grouplist.forEach(System.out::println)));
+                .filter(word -> word.equals("Word1"))
+                .subscribe(word -> System.out.println(word));
+
     }
 }
